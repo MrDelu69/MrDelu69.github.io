@@ -18,6 +18,29 @@ function createTicket(e,type){e.preventDefault();let id='DEMO-'+String(cases.len
 function ticketCreated(c){$('#clientView').innerHTML=`<div class="support-dashboard compact"><div class="confirmation-card"><div class="confirmation-icon">✓</div><p class="eyebrow blue">CASO REGISTRADO</p><h2>Recibimos tu solicitud</h2><p>Guarda estos datos para consultar el avance de tu caso.</p><div class="credential-box"><span>Código del ticket</span><strong>${esc(c.id)}</strong><span>Clave de consulta</span><strong>${esc(c.accessKey)}</strong></div><div class="notice email-note">Cuando el ticket cambie de estado, se notificara al correo registrado.</div><div class="actions"><button class="button" onclick="openClientCase('${c.id}')">Consultar mi caso</button><button class="button secondary" onclick="clientHome()">Volver al inicio</button></div></div></div>`}
 function checkAccess(){let id=$('#accessCode').value.trim().toUpperCase(),c=cases.find(x=>x.id===id),key=$('#accessKey').value.trim();if(!c){notify('No encontramos ese ticket en la demostracion');return}if(key!==(c.accessKey||'BM-DEMO')){notify('La clave no coincide con el ticket');return}openClientCase(id)}
 
+function employeeHome(){
+  $('#staffView').innerHTML=`<div class="general-dashboard"><div class="general-heading"><div><p class="eyebrow blue">PANEL DEL PERSONAL</p><h2>Resumen de atención</h2><p>Gestiona los casos de demostración desde esta vista.</p></div></div><div class="summary"><div class="stat"><strong>${cases.length}</strong><span>Casos totales</span></div><div class="stat"><strong>${cases.filter(c=>c.type==='Consulta').length}</strong><span>Consultas</span></div><div class="stat"><strong>${cases.filter(c=>c.type==='Reclamo').length}</strong><span>Reclamos</span></div><div class="stat"><strong>${cases.filter(c=>c.status==='En espera').length}</strong><span>En espera</span></div></div><div class="panel"><h3>Casos registrados</h3><div class="table-wrap"><table class="table"><thead><tr><th>Código</th><th>Tipo</th><th>Asunto</th><th>Estado</th></tr></thead><tbody>${cases.map(c=>`<tr><td>${esc(c.id)}</td><td>${esc(c.type)}</td><td>${esc(c.subject)}</td><td>${badge(c.status)}</td></tr>`).join('')}</tbody></table></div></div></div>`;
+}
+
+document.querySelectorAll('[data-view]').forEach((button)=>{
+  button.addEventListener('click',()=>{
+    const view=button.dataset.view;
+    document.querySelectorAll('[data-view]').forEach((item)=>item.classList.toggle('active',item===button));
+    $('#clientView').classList.toggle('hidden',view!=='client');
+    $('#staffView').classList.toggle('hidden',view!=='staff');
+    view==='staff'?employeeHome():clientHome();
+  });
+});
+
+$('#resetBtn').onclick=()=>{
+  cases=structuredClone(initialCases);
+  save();
+  clientHome();
+  notify('Datos restaurados');
+};
+
+clientHome();
+
 
 
 
