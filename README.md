@@ -1,9 +1,21 @@
-# Demo web JJD TECH
+# Routes
 
-Aplicación estática para presentar la propuesta. No requiere Java, base de datos ni instalación.
+TanStack Start uses **file-based routing**. Every `.tsx` file in this directory
+defines a route. Do **not** create `src/pages/`, `src/routes/_app/index.tsx`, or
+`app/layout.tsx` — those are Next.js / Remix conventions. The only root layout
+is `src/routes/__root.tsx`.
 
-Abrir `index.html` para probarla. El visitante puede usar las vistas de cliente y personal, registrar casos, cambiar estados y publicar mensajes. Los datos se guardan únicamente en el navegador mediante `localStorage` y son ficticios.
+## Conventions
 
-Para Google Sites, la carpeta debe publicarse en un alojamiento estático público como GitHub Pages, Netlify o Cloudflare Pages. Después se incorpora la URL mediante **Insertar → Incorporar → URL**. Si el alojamiento no permite incrustación, se añade un botón que abra la demo en otra pestaña.
+| File | URL |
+| --- | --- |
+| `index.tsx` | `/` |
+| `about.tsx` | `/about` |
+| `users/index.tsx` | `/users` |
+| `users/$id.tsx` | `/users/:id` (dynamic — bare `$`, no curly braces) |
+| `posts/{-$category}.tsx` | `/posts/:category?` (optional segment) |
+| `files/$.tsx` | `/files/*` (splat — read via `_splat` param, never `*`) |
+| `_layout.tsx` | layout route (renders children via `<Outlet />`) |
+| `__root.tsx` | app shell — wraps every page; preserve `<Outlet />` |
 
-La aplicación no es un sistema real de BM y no debe recibir datos personales.
+`routeTree.gen.ts` is auto-generated. Don't edit it by hand.
