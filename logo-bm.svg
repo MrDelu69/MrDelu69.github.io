@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="title desc">
+  <title id="title">Supermercados BM</title>
+  <desc id="desc">Logotipo azul de BM sobre fondo blanco</desc>
+  <rect width="120" height="120" rx="18" fill="#123b78"/>
+  <path d="M20 28h16v64H20zM36 28h18c13 0 22 7 22 18 0 7-4 13-10 16 8 3 13 9 13 18 0 12-10 20-25 20H36V28zm16 13v15h2c5 0 8-3 8-8s-3-7-8-7h-2zm0 28v18h4c7 0 11-3 11-9s-4-9-11-9h-4z" fill="#fff"/>
+  <path d="M78 28h16l6 39 6-39h16l-4 64h-14l-4-35-5 35H83z" fill="#f7c948"/>
+</svg>
