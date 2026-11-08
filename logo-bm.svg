@@ -1,7 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-labelledby="title desc">
-  <title id="title">Supermercados BM</title>
-  <desc id="desc">Logotipo azul de BM sobre fondo blanco</desc>
-  <rect width="120" height="120" rx="18" fill="#123b78"/>
-  <path d="M20 28h16v64H20zM36 28h18c13 0 22 7 22 18 0 7-4 13-10 16 8 3 13 9 13 18 0 12-10 20-25 20H36V28zm16 13v15h2c5 0 8-3 8-8s-3-7-8-7h-2zm0 28v18h4c7 0 11-3 11-9s-4-9-11-9h-4z" fill="#fff"/>
-  <path d="M78 28h16l6 39 6-39h16l-4 64h-14l-4-35-5 35H83z" fill="#f7c948"/>
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 447 447" role="img" aria-labelledby="title">
+<title id="title">Supermercados BM</title>
+<rect width="447" height="447" fill="#293f83"/>
+<path d="M104 160c73-29 166-31 240-7-32-25-72-31-111-27-48 4-91 16-129 34z" fill="#f9b900"/>
+<path d="M101 170c78-22 164-27 245-7-30-16-71-21-111-18-51 4-95 13-134 25z" fill="#ffc400"/>
+<path d="M269 146c12 8 25 18 34 29l-24 26-17-20z" fill="#f9b900"/>
+<rect x="98" y="170" width="250" height="93" rx="8" fill="#fff"/>
+<text x="111" y="249" fill="#293f83" font-family="Arial,sans-serif" font-size="92" font-weight="900" letter-spacing="-9">BM</text>
+<path d="M100 276h247" stroke="#f9b900" stroke-width="9"/>
+<text x="101" y="316" fill="#fff" font-family="Arial,sans-serif" font-size="31" font-style="italic">Supermercados</text>
 </svg>
