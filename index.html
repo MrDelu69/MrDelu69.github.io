@@ -2,16 +2,16 @@
 <html lang="es">
 <head>
   <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>JJD TECH · Atención BM</title><link rel="stylesheet" href="app.css"><link rel="stylesheet" href="app_v2.css"><link rel="stylesheet" href="app_v3.css">
+  <title>Atención al cliente · Supermercados BM</title><link rel="stylesheet" href="app.css"><link rel="stylesheet" href="app_v2.css"><link rel="stylesheet" href="app_v3.css"><link rel="stylesheet" href="app_v4.css">
 </head>
 <body>
-<header class="topbar"><div class="brand"><img class="bm-logo" src="logo-bm.svg" alt="Supermercados BM"><div class="brand-copy"><span>SUPERMERCADOS BM</span><b>Atención al cliente</b></div></div><nav class="top-nav"><button onclick="clientHome()">⌂ &nbsp;Inicio</button><button onclick="caseAccess()">▣ &nbsp;Consultar mi caso</button></nav></header>
+<header class="topbar"><div class="brand"><span aria-hidden="true" class="brand-mark"></span><div class="brand-copy"><span>SUPERMERCADOS BM</span><b>Atención al cliente</b></div></div><nav class="top-nav"><button onclick="clientHome()">⌂ &nbsp;Inicio</button><button onclick="caseAccess()">▣ &nbsp;Consultar mi caso</button></nav></header>
+<div class="demo-strip"><span>⚗</span> Prototipo académico · Datos de demostración</div>
 <main class="shell">
-  <section class="hero"><div><p class="eyebrow">Plataforma de atención</p><h1>Orientación clara,<br><em>seguimiento sencillo.</em></h1><p>Consulta información, envía tu caso o gestiona solicitudes desde una sola plataforma.</p></div><div class="hero-art"><i>?</i><i>✓</i><i>↗</i></div></section>
-  <nav class="switch"><button class="active" data-view="client">Vista del cliente</button><button data-view="staff">Vista del personal</button></nav>
+  <section class="welcome"><p><span aria-hidden="true">●</span> Hola, te damos la bienvenida</p><h1>Estamos para ayudarte</h1><div>Consulta información, envíanos tu caso o revisa cómo avanza tu atención.</div></section>
   <section id="clientView"></section><section id="staffView" class="hidden"></section>
 </main>
-<footer>JJD TECH · Propuesta académica para Supermercados BM <button id="resetBtn">Restablecer demostración</button></footer><div id="toast"></div>
+<footer>JJD TECH · Propuesta académica para Supermercados BM <span><button onclick="openStaff()">Acceso del personal</button> <button id="resetBtn">Restablecer demostración</button></span></footer><div id="toast"></div>
 <script src="app_v3.js"></script>
 </body></html>
 
